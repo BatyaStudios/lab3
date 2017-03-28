@@ -55,9 +55,10 @@ go:
 		write(1, "Error: Unable to fork process.\n", 30);
 		return Lab3ErrorForking;
 	case 0:
-		if (strcmp(Args[0], "cd"))
+		if (strcmp(Args[0], "cd")) {
 			execvp(Args[0], Args);
-		write(1, "Warning: Execution failed.\n", 27);
+			write(1, "Warning: Execution failed.\n", 27);
+		}
 		break;
 	default:
 		if (!strcmp(Args[0], "cd"))
