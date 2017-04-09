@@ -1,10 +1,10 @@
 default: ./lab3.c
-	gcc -o lab1.run ./lab3.c
+	gcc -o lab3.run ./lab3.c
 
 test: ./lab3.c
 	reset
 	echo gcc:
-	gcc -o lab1.run ./lab3.c -fsanitize=address
+	gcc -o lab3.run ./lab3.c -fsanitize=address
 	echo cppcheck:
 	cppcheck --enable=all --inconclusive --std=posix lab3.c
 	echo codepatch.pl:
